@@ -90,10 +90,15 @@ To design and implement a simple web-based quiz system using Flask and demonstra
 * Improve UI design
 
 ---
+##Screenshots
+
+#Home
 <img width="707" height="414" alt="home png - Copy" src="https://github.com/user-attachments/assets/9e3fff19-8093-4212-848b-6fbf71e8b2c6" />
 
+#Questions
 <img width="568" height="440" alt="quiz png" src="https://github.com/user-attachments/assets/0341fd13-8e11-476e-a713-18462dfe5f96" />
 
+#Result
 <img width="553" height="416" alt="result png" src="https://github.com/user-attachments/assets/2e54f755-3e47-45e7-9904-032fe7cfddad" />
 
 
