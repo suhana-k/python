@@ -90,18 +90,6 @@ To design and implement a simple web-based quiz system using Flask and demonstra
 * Improve UI design
 
 ---
-## 📸 Screenshots
-
-### 🏠 Home Page
-![Home](screenshots/home.png)
-
-### ❓ Quiz Page
-![Quiz](screenshots/quiz.png)
-
-### 🏁 Result Page
-![Result](screenshots/result.png)
-
----
 
 ## 👩‍💻 Author
 
