@@ -1,0 +1,87 @@
+body {
+    font-family: Arial;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                url("/static/image.png");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    margin: 50px auto;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn {
+    padding: 10px 20px;
+    background: #4facfe;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: #2f80ed;
+    transform: scale(1.05);
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 12px;
+    background: #f2f2f2;
+    border-radius: 5px;
+    cursor: pointer;
+    gap: 10px;
+}
+
+.option:hover {
+    background: #dbeafe;
+}
+
+.progress-bar {
+    width: 100%;
+    background: #ddd;
+    height: 10px;
+    border-radius: 5px;
+}
+
+.progress {
+    height: 10px;
+    background: #4facfe;
+    border-radius: 5px;
+    width: 0%;
+    transition: width 0.5s;
+}
+
+.timer {
+    color: red;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.review {
+    text-align: left;
+    margin: 10px 0;
+    padding: 12px;
+    background: #f9f9f9;
+    border-left: 5px solid #4facfe;
+    border-radius: 5px;
+}
+
+.correct {
+    color: green;
+    font-weight: bold;
+}
+
+.wrong {
+    color: red;
+    font-weight: bold;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🎉 Quiz Completed!</h1>
+
+    <h2>Your Score: {{ score }} / {{ total }}</h2>
+
+    <h2>📋 Answer Review</h2>
+
+    {% for ans in answers %}
+        <div class="review">
+
+            <p><b>Q{{ ans.q_no }}:</b> {{ ans.question }}</p>
+
+            <p>Your Answer:
+                {% if ans.selected == "Not Attempted" %}
+                    <span class="wrong">Not Attempted</span>
+                {% elif ans.selected == ans.correct %}
+                    <span class="correct">{{ ans.selected }}</span>
+                {% else %}
+                    <span class="wrong">{{ ans.selected }}</span>
+                {% endif %}
+            </p>
+
+            <p>Correct Answer: <b>{{ ans.correct }}</b></p>
+
+        </div>
+    {% endfor %}
+
+    <a href="/restart" class="btn">Restart Quiz</a>
+
+</div>
+
+</body>
+</html>

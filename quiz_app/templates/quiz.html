@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Question {{ q_no }} / {{ total }}</h2>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div class="progress" data-width="{{ progress }}"></div>
+    </div>
+
+    <!-- Timer -->
+    <div class="timer">
+        Time Left: <span id="time">30</span> sec
+    </div>
+
+    <!-- FORM -->
+    <form method="POST" id="quizForm" onsubmit="return validateAnswer()">
+
+        <h3>{{ q.q }}</h3>
+
+        {% for key, value in q.options.items() %}
+        <label class="option">
+            <input type="radio" name="option" value="{{ key }}">
+            <span>{{ key }}. {{ value }}</span>
+        </label>
+        {% endfor %}
+
+        <button type="submit" class="btn">Next</button>
+
+    </form>
+
+</div>
+
+<script>
+window.onload = function() {
+
+    let timeLeft = 30;
+    const timer = document.getElementById("time");
+    const form = document.getElementById("quizForm");
+
+    // TIMER
+    let countdown = setInterval(function() {
+        timeLeft--;
+        timer.textContent = timeLeft;
+
+        // AUTO SUBMIT WHEN TIME OVER
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+            form.submit();
+        }
+    }, 1000);
+
+    // PROGRESS BAR
+    let progressBar = document.querySelector(".progress");
+    progressBar.style.width = progressBar.getAttribute("data-width") + "%";
+};
+
+
+// ✅ VALIDATION (IMPORTANT FIX)
+function validateAnswer() {
+
+    let selected = document.querySelector('input[name="option"]:checked');
+
+    if (!selected) {
+        alert("⚠ Please select an option before proceeding!");
+        return false;   // STOP SUBMIT
+    }
+
+    return true;        // ALLOW SUBMIT
+}
+</script>
+
+</body>
+</html>
